@@ -1,0 +1,45 @@
+version: '3.5'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app-customers
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+    ports:
+      - "8081:8081"
+    restart: no
+    depends_on:
+      - db-customers
+    networks:
+      - internet
+      - appnet
+
+  db-customers:
+    image: postgres:16-alpine
+    container_name: db-customers
+    environment:
+      POSTGRES_DB: customers
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      PGPORT: 5434
+    ports:
+      - "5434:5434"
+    volumes:
+      - customers_db:/var/lib/postgresql/data
+    restart: no
+    networks:
+      - appnet
+
+volumes:
+  customers_db:
+
+networks:
+  internet:
+    name: internet
+    driver: bridge
+  appnet:
+    name: appnet
+    driver: bridge
