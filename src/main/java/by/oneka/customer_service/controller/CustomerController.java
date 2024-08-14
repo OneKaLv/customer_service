@@ -20,6 +20,7 @@ public class CustomerController {
     @Autowired
     private final CustomerService customerService;
 
+
     @PostMapping
     @ApiResponses({
             @ApiResponse(responseCode = "201", description = "Пользователь создан")
