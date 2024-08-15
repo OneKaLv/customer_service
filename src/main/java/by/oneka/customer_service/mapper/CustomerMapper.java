@@ -10,18 +10,18 @@ public class CustomerMapper {
     public CustomerDTO toDTO(Customer entity) {
         return new CustomerDTO(
                 entity.getId(),
-                entity.getName(),
-                entity.getEmail(),
-                entity.getPassword()
+                entity.getFirstName(),
+                entity.getLastName(),
+                entity.getEmail()
         );
     }
 
     public Customer toCustomer(CustomerDTO dto) {
         return new Customer(
                 dto.id(),
-                dto.name(),
-                dto.email(),
-                dto.password()
+                dto.firstName(),
+                dto.lastName(),
+                dto.email()
         );
     }
 }
