@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
     <groupId>by.oneka</groupId>
-    <artifactId>local_customer_service</artifactId>
+    <artifactId>customer_service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>local_customer_service</name>
-    <description>local_customer_service</description>
+    <name>customer_service</name>
+    <description>customer_service</description>
     <url/>
     <licenses>
         <license/>
