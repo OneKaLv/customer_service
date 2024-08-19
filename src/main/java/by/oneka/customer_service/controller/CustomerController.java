@@ -49,7 +49,7 @@ public class CustomerController {
         return customerDTO == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(customerDTO);
     }
 
-    @PostMapping("/{id}")
+    @PutMapping("/{id}")
     @ApiResponses({
             @ApiResponse(responseCode = "203", description = "Пользователь изменён"),
             @ApiResponse(responseCode = "404", description = "Пользователь не найден")
